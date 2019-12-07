@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:popup": "ng build --project popup-element --prod --output-hashing none && node ./projects/popup-element/popup-element.build.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -23,7 +24,7 @@
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1",
-    "document-register-element": "^1.7.2"
+    "document-register-element": "1.8.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.19",
@@ -33,6 +34,8 @@
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
+    "concat": "^1.0.3",
+    "fs-extra": "^8.1.0",
     "@webcomponents/webcomponentsjs": "^2.4.0",
     "codelyzer": "^5.0.0",
     "jasmine-core": "~3.4.0",

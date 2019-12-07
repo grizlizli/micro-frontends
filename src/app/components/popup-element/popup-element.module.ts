@@ -2,7 +2,7 @@ import {CUSTOM_ELEMENTS_SCHEMA, Injector, NgModule, NO_ERRORS_SCHEMA} from '@ang
 import {PopupElementComponent} from './popup-element.component';
 import {CommonModule} from '@angular/common';
 // @ts-ignore
-import * as MyPopup from './gr-popup-element';
+import * as MyPopup from 'dist/popup-element/popup-element';
 
 // import {createCustomElement} from '@angular/elements';
 

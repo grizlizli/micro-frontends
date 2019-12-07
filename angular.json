@@ -127,6 +127,132 @@
           }
         }
       }
+    },
+    "popup-element": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/popup-element",
+      "sourceRoot": "projects/popup-element/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/popup-element",
+            "index": "projects/popup-element/src/index.html",
+            "main": "projects/popup-element/src/main.ts",
+            "polyfills": "projects/popup-element/src/polyfills.ts",
+            "tsConfig": "projects/popup-element/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/popup-element/src/favicon.ico",
+              "projects/popup-element/src/assets"
+            ],
+            "styles": [
+              "projects/popup-element/src/styles.scss"
+            ],
+            "scripts": [
+              {
+                "input": "node_modules/document-register-element/build/document-register-element.js"
+              }
+            ]
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/popup-element/src/environments/environment.ts",
+                  "with": "projects/popup-element/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "popup-element:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "popup-element:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "popup-element:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/popup-element/src/test.ts",
+            "polyfills": "projects/popup-element/src/polyfills.ts",
+            "tsConfig": "projects/popup-element/tsconfig.spec.json",
+            "karmaConfig": "projects/popup-element/karma.conf.js",
+            "assets": [
+              "projects/popup-element/src/favicon.ico",
+              "projects/popup-element/src/assets"
+            ],
+            "styles": [
+              "projects/popup-element/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/popup-element/tsconfig.app.json",
+              "projects/popup-element/tsconfig.spec.json",
+              "projects/popup-element/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/popup-element/e2e/protractor.conf.js",
+            "devServerTarget": "popup-element:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "popup-element:serve:production"
+            }
+          }
+        }
+      }
     }
   },
   "defaultProject": "micro-frontends",
