@@ -1,30 +1,25 @@
 # MicroFrontends
 
-## Babe & Žabe
-### Ali nije džabe :)
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Micro Frontends Architecture Concept.
 
 ## Build
 
+Run `npm run build:popup` to build Popup Component bootrstrapped as an Angular Element.
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## Notes
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Do not upgrade `document-register-element`. There is a known issue with versions above v1.8.1.
 
-## Running end-to-end tests
+## Resources
+[Modules are not what you think they are](https://www.youtube.com/watch?v=pERhnBBae2k)
+[Extension Mechanism](https://github.com/maximusk/extension-mechanism-demo)
+[The Strengths and Benefits of Micro Frontends](https://www.toptal.com/front-end/micro-frontends-strengths-benefits)
+[Micro Front Ends — Doing It Angular Style — Part 1](https://medium.com/outbrain-engineering/micro-front-ends-doing-it-angular-style-part-1-219c842fd02e)
+[Micro Front Ends — Doing It Angular Style — Part 2](https://medium.com/outbrain-engineering/micro-front-ends-doing-it-angular-style-part-2-1393ced4ceab?)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Projects: 
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+List of projects in this repository:
+- Micro Frontends Container
+- Popup Component
